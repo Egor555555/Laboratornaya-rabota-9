@@ -1,0 +1,16 @@
+//Даны строки S и S0. Удалить из строки S последнюю подстроку, совпадающую с S0. Если совпадающих подстрок нет, то вывести строку S без изменений.
+#include<iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+    system("chcp 1251");
+    string s, s0;
+    cin >> s >> s0;
+    int pos = s.rfind(s0);
+    if (pos + 1)
+        s.erase(pos, s0.size());
+    cout << s;
+    return 0;
+}
