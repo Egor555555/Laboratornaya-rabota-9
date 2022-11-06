@@ -1,0 +1,18 @@
+//Дана строка, состоящая из русских слов, разделенных пробелами. Вывести строку, содержащую эти же слова, разделенные одним символом «.» (точка). В конце строки точку не ставить.
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+	system("chcp 1251");
+	string s;
+	getline(cin, s);
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] == ' ' && s[i + 1] == ' ')s.erase(i, 1);
+	}while (s.find(' ') != -1) {
+		s[s.find(' ')] = '.';
+	}
+	cout << s;
+	return 0;
+}
